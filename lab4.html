@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 4 - Making Changes</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git 101</a>
+
+      <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item">Git Credentials</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item">Checking Status</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item active">Making Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item">Committing Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item">Changes, not Files</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item">History</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item">Coming Soon</a></div>
+    </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 4</div>
+      <h1 class="page-title">Making changes</h1>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">1</div>
+          <h2 class="section-title">Goals</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">Learn to monitor the working directory’s state.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">01</div>
+          <h2 class="section-title">Changing the “Hello, World!” page</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">
+            Let’s add some HTML tags to our greeting. Change the file contents to:
+          </p>
+          <div class="code-block">
+            <span class="execute-label">File: hello.html</span>
+            <pre>&lt;h1&gt;Hello, World!&lt;/h1&gt;</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">02</div>
+          <h2 class="section-title">Checking the status</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">Check the working directory’s status.</p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git status</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")</pre>
+          </div>
+
+          <p class="section-text">
+            Git knows <code>hello.html</code> has been modified, but the changes aren’t committed yet.
+          </p>
+          <p class="section-text">
+            The status message also hints at next steps: use <code>git add</code> to stage, or <code>git restore</code>
+            to discard the changes.
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab3.html'">
+          <span>Back to Lab 3: Checking Status</span>
+          <span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab5.html'">
+          <span>Next</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

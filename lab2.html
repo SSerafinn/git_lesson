@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Creating a Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <a href="index.html" class="sidebar-title">Git 101</a>
+
+            <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item active">Git Credentials</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item">Checking Status</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item">Making Changes</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item">Committing Changes</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item">Changes, not Files</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item">History</a></div>
+            <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item">Coming Soon</a></div>
+        </aside>
+
+        <main class="main-content">
+            <div class="lab-header">LAB 2</div>
+            <h1 class="page-title">Creating a project</h1>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">Goals</h2>
+                </div>
+                <div class="section-content">
+                    <p class="section-text">Learn how to create a Git repository from scratch.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">01</div>
+                    <h2 class="section-title">Create a “Hello, World!” page</h2>
+                </div>
+                <div class="section-content">
+                    <p class="section-text">Get started in an empty directory (for example, <code>repositories</code>, if you downloaded the file from the previous step) and add an empty subdirectory named <code>work</code>, then create a <code>hello.html</code> file in it with the following contents.</p>
+                    <div class="code-block">
+                        <span class="execute-label">Run</span>
+                        <div class="code-line">mkdir -p work</div>
+                        <div class="code-line">cd work</div>
+                        <div class="code-line">touch hello.html</div>
+                    </div>
+                    <div class="code-block">
+                        <span class="execute-label">File: hello.html</span>
+                        <pre>Hello, World!</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">02</div>
+                    <h2 class="section-title">Create a repository</h2>
+                </div>
+                <div class="section-content">
+                    <p class="section-text">So you have a directory that contains one file. Run <code>git init</code> in order to create a Git repo from that directory.</p>
+                    <div class="code-block">
+                        <span class="execute-label">Run</span>
+                        <div class="code-line">git init</div>
+                    </div>
+                    <div class="code-block">
+                        <span class="execute-label">Result</span>
+                        <pre>Initialized empty Git repository in /home/&lt;you&gt;/repositories/work/.git/</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">03</div>
+                    <h2 class="section-title">Add the page to the repository</h2>
+                </div>
+                <div class="section-content">
+                    <p class="section-text">Now let's add the “Hello, World” page to the repository.</p>
+                    <div class="code-block">
+                        <span class="execute-label">Run</span>
+                        <div class="code-line">git add hello.html</div>
+                        <div class="code-line">git commit -m "Initial Commit"</div>
+                    </div>
+                    <p class="section-text">You will see:</p>
+                    <div class="code-block">
+                        <span class="execute-label">Result</span>
+                        <pre>$ git add hello.html
+$ git commit -m "Initial commit"
+[main (root-commit) 5836970] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.html</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="nav-button" onclick="location.href='setup.html'">
+                    <span>Back to Lab 1: Git Credentials</span>
+                    <span class="arrow">←</span>
+                </button>
+                <button class="nav-button" onclick="location.href='#'">
+                    <span>Next</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

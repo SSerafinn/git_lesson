@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 7 - Committing Changes</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git Immersion</a>
+
+           <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item">Git Credentials</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item">Checking Status</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item">Making Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item active">Committing Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item">Changes, not Files</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item">History</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item">Coming Soon</a></div>
+    </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 7</div>
+      <h1 class="page-title">Committing changes</h1>
+
+      <div class="section">
+        <div class="section-header"> <b>Goals</b></div>
+        <div class="section-content">
+          <p class="section-text">Learn how to commit staged changes with clear and meaningful commit messages.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">01</div>
+          <h2 class="section-title">Making a commit</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">
+            Once you’ve staged your changes, you must create a commit. Every commit requires a commit message—Git
+            will not allow you to commit without one.
+          </p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git commit -m "Add header to Hello World page"</div>
+          </div>
+          <p class="section-text">
+            The <code>-m</code> flag is used to add the commit message directly in the command line.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">02</div>
+          <h2 class="section-title">Commit message conventions</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">Commit messages should be:</p>
+          <ul class="section-text">
+            <li><strong>Clear and descriptive</strong> – explain what the commit does;</li>
+            <li><strong>Written in imperative mood</strong> – e.g., “Add feature” not “Added feature”;</li>
+            <li><strong>Concise but specific</strong> – avoid vague messages like “fix” or “update.”</li>
+          </ul>
+
+          <div class="code-block">
+            <span class="execute-label">Good examples</span>
+            <pre>
+git commit -m "Add H1 header to Hello World page"
+git commit -m "Fix typo in introduction paragraph"
+git commit -m "Refactor CSS for navigation bar"</pre>
+          </div>
+
+          <div class="code-block">
+            <span class="execute-label">Bad examples</span>
+            <pre>
+git commit -m "update"
+git commit -m "stuff"
+git commit -m "final changes"</pre>
+          </div>
+          <p class="section-text">
+            Following a proper naming convention makes your project history easier to read and maintain.
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab6.html'">
+          <span>Back to Lab 6: Staging and Committing</span>
+          <span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab8.html'">
+          <span>Next</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

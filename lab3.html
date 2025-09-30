@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 3 - Checking the Status of the Repository</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git 101</a>
+
+      <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item">Git Credentials</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item active">Checking Status</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item">Making Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item">Committing Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item">Changes, not Files</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item">History</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item">Coming Soon</a></div>
+    </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 3</div>
+      <h1 class="page-title">Checking the status of the repository</h1>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">1</div>
+          <h2 class="section-title">Goals</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">Learn how to check the repository’s status.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">01</div>
+          <h2 class="section-title">Check the status of the repository</h2>
+        </div>
+        <div class="section-content">
+          <p class="section-text">
+            Use the <code>git status</code> command to check the current state of the repository.
+          </p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git status</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git status
+On branch main
+nothing to commit, working tree clean</pre>
+          </div>
+
+          <p class="section-text">
+            If you see <code>On branch master</code> instead of <code>On branch main</code>, you may have an older Git that
+            didn’t apply the default branch setting. Rename the branch to <code>main</code> with:
+          </p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git branch -m master main</div>
+          </div>
+
+          <p class="section-text">
+            The command checks status and reports there’s nothing to commit, which means the repository stores the current
+            state of the working directory and there are no changes to record. We’ll use <code>git status</code> frequently
+            to monitor both the working directory and the repository.
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab2.html'">
+          <span>Back to Lab 2: Creating a Project</span>
+          <span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab4.html'">
+          <span>Next</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

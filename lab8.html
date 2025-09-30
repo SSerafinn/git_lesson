@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 8 - Changes, not Files</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git 101</a>
+
+      <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item">Git Credentials</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item">Checking Status</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item">Making Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item">Committing Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item active">Changes, not Files</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item">History</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item">Coming Soon</a></div>
+    </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 8</div>
+      <h1 class="page-title">Changes, not Files</h1>
+
+      <div class="section">
+        <div class="section-header"> <b>Goals</b></div>
+        <div class="section-content">
+          <p class="section-text">
+            Understand that Git works with the <strong>changes</strong>, not the files themselves.
+          </p>
+          <p class="section-text">
+            Unlike most version control systems that track files, Git tracks <em>changes</em>. A <code>git add file</code>
+            command does not permanently add the file, but rather notes the current state of the file so that it can be committed later.
+          </p>
+        </div>
+      </div>
+
+      <!-- First Change -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">01</div><h2 class="section-title">First Change: Adding default page tags</h2></div>
+        <div class="section-content">
+          <p class="section-text">Update <code>hello.html</code> with HTML and BODY tags:</p>
+          <div class="code-block"><span class="execute-label">File: hello.html</span><pre>
+< html>
+  < body>
+    < h1>Hello, World!< /h1>
+  < /body>
+< /html></pre></div>
+        </div>
+      </div>
+
+      <!-- Add this change -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">02</div><h2 class="section-title">Add this change</h2></div>
+        <div class="section-content">
+          <div class="code-block"><span class="execute-label">Run</span><pre>
+git add hello.html</pre></div>
+        </div>
+      </div>
+
+      <!-- Second Change -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">03</div><h2 class="section-title">Second Change: Add the HTML headers</h2></div>
+        <div class="section-content">
+          <p class="section-text">Now add a HEAD section:</p>
+          <div class="code-block"><span class="execute-label">File: hello.html</span><pre>
+< html>
+  < head>< /head>
+  < body>
+    < h1>Hello, World!< /h1>
+  < /body>
+< /html></pre></div>
+        </div>
+      </div>
+
+      <!-- Check current status -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">04</div><h2 class="section-title">Check the current status</h2></div>
+        <div class="section-content">
+          <div class="code-block"><span class="execute-label">Run</span><pre>git status</pre></div>
+          <div class="code-block"><span class="execute-label">Result</span><pre>
+$ git status
+On branch main
+Changes to be committed:
+  modified: hello.html
+
+Changes not staged for commit:
+  modified: hello.html</pre></div>
+          <p class="section-text">
+            Notice that <code>hello.html</code> is listed twice:  
+            - The first change (default tags) is staged and ready.  
+            - The second change (HEAD section) is unstaged.  
+          </p>
+        </div>
+      </div>
+
+      <!-- Commit -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">05</div><h2 class="section-title">Commit</h2></div>
+        <div class="section-content">
+          <div class="code-block"><span class="execute-label">Run</span><pre>
+git commit -m "Added standard HTML page tags"
+git status</pre></div>
+          <div class="code-block"><span class="execute-label">Result</span><pre>
+[main 46afaff] Added standard HTML page tags
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+$ git status
+On branch main
+Changes not staged for commit:
+  modified: hello.html</pre></div>
+        </div>
+      </div>
+
+      <!-- Adding the second change -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">06</div><h2 class="section-title">Adding the second change</h2></div>
+        <div class="section-content">
+          <p class="section-text">Stage the second change:</p>
+          <div class="code-block"><span class="execute-label">Run</span><pre>
+git add .
+git status</pre></div>
+          <div class="code-block"><span class="execute-label">Result</span><pre>
+$ git add .
+$ git status
+Changes to be committed:
+  modified: hello.html</pre></div>
+        </div>
+      </div>
+
+      <!-- Commit the second change -->
+      <div class="section">
+        <div class="section-header"><div class="section-number">07</div><h2 class="section-title">Commit the second change</h2></div>
+        <div class="section-content">
+          <div class="code-block"><span class="execute-label">Run</span><pre>
+git commit -m "Added HTML header"</pre></div>
+          <div class="code-block"><span class="execute-label">Result</span><pre>
+[main b7614c1] Added HTML header
+ 1 file changed, 2 insertions(+)</pre></div>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab7.html'">
+          <span>Back to Lab 7: Committing Changes</span><span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab9.html'">
+          <span>Next</span><span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

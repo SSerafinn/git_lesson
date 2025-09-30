@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 9 - History</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git Immersion</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 9 - History</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-title">Git 101</a>
+
+      <div class="nav-section"><div class="nav-label">LECTURE</div><a href="lecture.html" class="nav-item">Git Basics</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 1</div><a href="setup.html" class="nav-item">Git Credentials</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 2</div><a href="lab2.html" class="nav-item">Creating a Project</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 3</div><a href="lab3.html" class="nav-item">Checking Status</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 4</div><a href="lab4.html" class="nav-item">Making Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 5</div><a href="lab5.html" class="nav-item">Staging the Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 6</div><a href="lab6.html" class="nav-item">Staging and Committing</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 7</div><a href="lab7.html" class="nav-item">Committing Changes</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 8</div><a href="lab8.html" class="nav-item">Changes, not Files</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 9</div><a href="lab9.html" class="nav-item active">History</a></div>
+      <div class="nav-section"><div class="nav-label">LAB 10</div><a href="lab10.html" class="nav-item ">Coming Soon</a></div>
+    </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 9</div>
+      <h1 class="page-title">History</h1>
+
+      <div class="section">
+       <div class="section-header"> <b>Goals</b></div>
+        <div class="section-content">
+          <p class="section-text">Learn to view the project’s history.</p>
+          <p class="section-text">Getting a list of changes is done with the <code>git log</code> command.</p>
+
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log
+commit b7614c1ae... 
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added HTML header
+
+commit 46afaff223...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added standard HTML page tags
+
+commit 78433de967...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added h1 tag
+
+commit 5836970eaf...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Initial commit</pre>
+          </div>
+
+          <p class="section-text">
+            That’s the list of commits we’ve created so far.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">01</div><h2 class="section-title">One line history</h2></div>
+        <div class="section-content">
+          <p class="section-text">You fully control what <code>git log</code> shows. A handy compact view is single-line:</p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log --oneline</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log --oneline
+b7614c1 Added HTML header
+46afaff Added standard HTML page tags
+78433de Added h1 tag
+5836970 Initial commit</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">02</div><h2 class="section-title">Controlling the display of entries</h2></div>
+        <div class="section-content">
+          <p class="section-text">Some useful options for viewing history:</p>
+          <div class="code-block">
+            <pre>git log --oneline --max-count=2
+git log --oneline --since="5 minutes ago"
+git log --oneline --until="5 minutes ago"
+git log --oneline --author="Your Name"
+git log --oneline --all</pre>
+          </div>
+          <p class="section-text">
+            There are many more. See <code>git log</code>’s manual page for a full list.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">03</div><h2 class="section-title">Getting fancy</h2></div>
+        <div class="section-content">
+          <p class="section-text">
+            A handy way to review changes from the last week (and optionally filter by author) is:
+          </p>
+          <div class="code-block">
+            <pre>git log --all --pretty=format:"%h %ad | %s (%an)" --since="7 days ago"</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">04</div><h2 class="section-title">The ultimate format of the log</h2></div>
+        <div class="section-content">
+          <p class="section-text">A readable, information-dense format I like is:</p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log --pretty=format:"%h %ad | %s %d [%an]" --date=short</div>
+          </div>
+
+          <p class="section-text">It looks like this:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log --pretty=format:"%h %ad | %s %d [%an]" --date=short
+b7614c1 2023-11-28 | Added HTML header (HEAD -&gt; main) [Your Name]
+46afaff 2023-11-28 | Added standard HTML page tags [Your Name]
+78433de 2023-11-28 | Added h1 tag [Your Name]
+5836970 2023-11-28 | Initial commit [Your Name]</pre>
+          </div>
+
+          <p class="section-text"><strong>Breakdown:</strong></p>
+          <ul class="section-text">
+            <li><code>--pretty="..."</code> — defines the output format.</li>
+            <li><code>%h</code> — abbreviated commit hash.</li>
+            <li><code>%ad</code> — commit date.</li>
+            <li><code>|</code> — visual separator.</li>
+            <li><code>%s</code> — commit message.</li>
+            <li><code>%d</code> — decorations (e.g., branch names or tags).</li>
+            <li><code>%an</code> — author name.</li>
+            <li><code>--date=short</code> — short, tidy dates.</li>
+          </ul>
+
+          <p class="section-text">
+            To avoid retyping, you can set your default log output:
+          </p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <pre>git config --global format.pretty "%h %ad | %s %d [%an]"
+git config --global log.date short</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">05</div><h2 class="section-title">Other tools</h2></div>
+        <div class="section-content">
+          <p class="section-text">
+            GUI tools like <code>gitx</code> (macOS) and <code>gitk</code> (cross-platform) can help explore history visually.
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab8.html'">
+          <span>Back to Lab 8: Changes, not Files</span>
+          <span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab10.html'">
+          <span>Next</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+ </aside>
+
+    <main class="main-content">
+      <div class="lab-header">LAB 9</div>
+      <h1 class="page-title">History</h1>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-number">Goals</div>
+        </div>
+        <div class="section-content">
+          <p class="section-text">Learn to view the project’s history.</p>
+          <p class="section-text">Getting a list of changes is done with the <code>git log</code> command.</p>
+
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log
+commit b7614c1ae... 
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added HTML header
+
+commit 46afaff223...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added standard HTML page tags
+
+commit 78433de967...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Added h1 tag
+
+commit 5836970eaf...
+Author: Your Name &lt;you@example.com&gt;
+Date:   Tue Nov 28 05:51:38 2023 -0600
+
+    Initial commit</pre>
+          </div>
+
+          <p class="section-text">
+            That’s the list of commits we’ve created so far.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">01</div><h2 class="section-title">One line history</h2></div>
+        <div class="section-content">
+          <p class="section-text">You fully control what <code>git log</code> shows. A handy compact view is single-line:</p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log --oneline</div>
+          </div>
+
+          <p class="section-text">You will see:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log --oneline
+b7614c1 Added HTML header
+46afaff Added standard HTML page tags
+78433de Added h1 tag
+5836970 Initial commit</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">02</div><h2 class="section-title">Controlling the display of entries</h2></div>
+        <div class="section-content">
+          <p class="section-text">Some useful options for viewing history:</p>
+          <div class="code-block">
+            <pre>git log --oneline --max-count=2
+git log --oneline --since="5 minutes ago"
+git log --oneline --until="5 minutes ago"
+git log --oneline --author="Your Name"
+git log --oneline --all</pre>
+          </div>
+          <p class="section-text">
+            There are many more. See <code>git log</code>’s manual page for a full list.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">03</div><h2 class="section-title">Getting fancy</h2></div>
+        <div class="section-content">
+          <p class="section-text">
+            A handy way to review changes from the last week (and optionally filter by author) is:
+          </p>
+          <div class="code-block">
+            <pre>git log --all --pretty=format:"%h %ad | %s (%an)" --since="7 days ago"</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">04</div><h2 class="section-title">The ultimate format of the log</h2></div>
+        <div class="section-content">
+          <p class="section-text">A readable, information-dense format I like is:</p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <div class="code-line">git log --pretty=format:"%h %ad | %s %d [%an]" --date=short</div>
+          </div>
+
+          <p class="section-text">It looks like this:</p>
+          <div class="code-block">
+            <span class="execute-label">Result</span>
+            <pre>$ git log --pretty=format:"%h %ad | %s %d [%an]" --date=short
+b7614c1 2023-11-28 | Added HTML header (HEAD -&gt; main) [Your Name]
+46afaff 2023-11-28 | Added standard HTML page tags [Your Name]
+78433de 2023-11-28 | Added h1 tag [Your Name]
+5836970 2023-11-28 | Initial commit [Your Name]</pre>
+          </div>
+
+          <p class="section-text"><strong>Breakdown:</strong></p>
+          <ul class="section-text">
+            <li><code>--pretty="..."</code> — defines the output format.</li>
+            <li><code>%h</code> — abbreviated commit hash.</li>
+            <li><code>%ad</code> — commit date.</li>
+            <li><code>|</code> — visual separator.</li>
+            <li><code>%s</code> — commit message.</li>
+            <li><code>%d</code> — decorations (e.g., branch names or tags).</li>
+            <li><code>%an</code> — author name.</li>
+            <li><code>--date=short</code> — short, tidy dates.</li>
+          </ul>
+
+          <p class="section-text">
+            To avoid retyping, you can set your default log output:
+          </p>
+          <div class="code-block">
+            <span class="execute-label">Run</span>
+            <pre>git config --global format.pretty "%h %ad | %s %d [%an]"
+git config --global log.date short</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-number">05</div><h2 class="section-title">Other tools</h2></div>
+        <div class="section-content">
+          <p class="section-text">
+            GUI tools like <code>gitx</code> (macOS) and <code>gitk</code> (cross-platform) can help explore history visually.
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="location.href='lab8.html'">
+          <span>Back to Lab 8: Changes, not Files</span>
+          <span class="arrow">←</span>
+        </button>
+        <button class="nav-button" onclick="location.href='lab10.html'">
+          <span>Next</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
